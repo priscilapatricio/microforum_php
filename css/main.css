@@ -1,0 +1,163 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+
+.corpo_forum{
+	margin:20px auto auto auto;
+	padding:20px;
+	width:1000px;
+	font:11px tahoma;
+	background-color:rgb(220,220,220);
+	text-align:left;
+	border:1px solid black;
+	border-radius:10px;
+}
+
+.rodape{
+	margin:3px auto auto auto;
+	padding:20px;
+	width:1000px;
+	background-color:black;
+	color:white;
+	font: 0.7em tahoma;
+	text-align:center;
+	border-radius:10px;
+}
+
+.form_login, .form_signup{
+	width:400px;
+	border:1px solid black;
+	margin:20px auto;
+	padding:20px;
+	text-align:left;
+}
+
+input[type="submit"]{
+	width:120px;
+	padding:5px;
+}
+
+.erro{
+	margin:20px auto 20px auto;
+	color:red;
+	font:bold 12px tahoma;
+	text-align:center;
+	width:600px;
+	border:1px solid rgb(170,170,170);
+	padding:5px;
+}
+
+.novo_registro_sucesso, .login_sucesso{
+	border:2px groove rgb(170,170,170);
+	padding:20px;
+	background-color:rgb(200,200,200);
+	color:black;
+	font:11px tahoma;
+	border-radius:10px;
+	width:300px;
+	text-align:center;
+	margin:30px auto 30px auto;	
+}
+
+.mensagem{
+	width:400px;
+	border:1px solid black;
+	margin:30px auto 30px auto;
+	padding:20px;
+	text-align:center;
+}
+
+.dados_utilizador{
+	border:1px solid black;
+	border-radius:5px;
+	margin:5px;
+	padding:5px;
+}
+
+.dados_utilizador img{
+	width:40px;
+	height:40px;
+}
+
+.dados_utilizador span{
+	font-size:12px;
+	font-weight:bold;
+	margin-left:10px;
+}
+
+.post{
+	border:2px groove rgb(220,220,220);
+	border-radius:5px;
+	margin:5px;
+	padding:20px;
+	background-color: rgb(240,240,240);
+}
+
+.post img{
+	width:40px;
+	height:40px;
+}
+
+.post #post_username{
+	margin-left:10px;
+	font:bold 14px tahoma;	
+}
+
+.post #post_titulo{
+	margin-left:20px;
+	font:bold 14px tahoma;
+	color: rgb(100,100,100);
+}
+
+.post #post_mensagem{
+	padding:10px 0px 10px 50px;
+	font:12px tahoma;
+}
+
+.post #post_data{
+	font-size:10px;
+	font-family:tahoma;
+	color:rgb(150,150,150);
+	text-align:right;
+}
+
+.novo_post{
+	background-color:black;
+	color:white;
+	text-align:right;
+	padding:10px;
+	margin:5px;
+	border-radius:5px;
+}
+
+.novo_post a:link{color:white; text-decoration:none}
+.novo_post a:visited{color:white; text-decoration:none}
+.novo_post a:hover{color:yellow; text-decoration:none}
+.novo_post a:active{color:white; text-decoration:none}
+
+.form_post{
+	width:700px;
+	border:1px solid black;
+	margin:20px auto 20px auto;
+	padding:20px;
+	text-align:left;
+}
+
+#id_post{
+	color:rgb(150,150,150);
+	margin:0px 0px 0px 10px;
+}
+
+#editar{
+	margin-right:10px;
+}
+
+.totais{
+	border:1px solid black;
+	border-radius:5px;
+	margin:5px;
+	padding:10px;
+	background-color:rgb(180,180,180);
+}
+	
