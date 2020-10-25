@@ -4,7 +4,6 @@
 	echo'</div>';
 	
 	//rodapé
-	echo'<div class="rodape">Webmaster: João Ribeiro &copy; 2020</div>';
-
+	echo'<div class="rodape">Webmaster: Priscila Patricio &copy; 2020</div>';
 
 ?>

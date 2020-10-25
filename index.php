@@ -15,19 +15,15 @@
 		exit;
 	}
 	
-	//--------------------------------------------------------
 	//cabecalho
 	include'cabecalho.php';
-	
-	
+		
 	if($sessao_user == null)
 	{
 		include'login.php';
 	}
-	
-	//--------------------------------------------------------
+
 	//rodape
 	include'rodape.php';
 	
-
 ?>

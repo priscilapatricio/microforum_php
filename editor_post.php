@@ -11,11 +11,9 @@
 		include'rodape.php';
 		exit;
 	}
-	
-	//--------------------------------------------------------
+
 	include'cabecalho.php';
 	
-	//--------------------------------------------------------
 	//verificar se é para editar o post
 	$pid=-1;
 	$editar=false;
@@ -38,19 +36,13 @@
 		
 		$titulo=$dados['titulo'];
 		$mensagem=$dados['mensagem'];
-		
 	}
 	
-	
-	//-------------------------------------------------------------------------------
 	//dados do utilizador que está logado
 	echo'<div class="dados_utilizador">
 		<img src="images/avatars/'.$_SESSION['avatar'].'"><span>'.$_SESSION['user'].'</span> | <a href="logout.php">Logout</a>
 		</div>';
-	
 
-	
-	//-------------------------------------------------------------------------------
 	//formulário para construção dos posts
 	echo'<div>
 		<form class="form_post" method="post" action="post_add.php">
@@ -74,6 +66,6 @@
 		</form>
 	</div>';
 
-	//--------------------------------------------------------
 	include'rodape.php';
+
 ?>

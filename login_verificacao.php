@@ -10,7 +10,6 @@
 		exit;
 	}
 	
-	//------------------------------------------------------
 	include 'cabecalho.php';
 	
 	$utilizador="";
@@ -34,9 +33,7 @@
 		exit;
 	}
 	
-	//------------------------------------------------------
 	//verificação dos dados de login
-	
 	$password_encriptada=md5($password_utilizador);
 	
 	include 'config.php';
@@ -71,11 +68,7 @@
 			<a href="forum.php">Continuar</a>
 		</div>';
 	}
-	
-	
-	//------------------------------------------------------
+
 	include 'rodape.php';
-
-
 
 ?>

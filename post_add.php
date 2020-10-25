@@ -11,11 +11,9 @@
 		include'rodape.php';
 		exit;
 	}
-	//-------------------------------------------------------------------------------
+
 		include'cabecalho.php';
-		
-		
-	//-------------------------------------------------------------------------------	
+	
 	//dados do utilizador que está logado
 	echo'<div class="dados_utilizador">
 		<img src="images/avatars/'.$_SESSION['avatar'].'"><span>'.$_SESSION['user'].'</span> | <a href="logout.php">Logout</a>
@@ -62,7 +60,6 @@
 		$editar=true;
 	}
 	
-	//-------------------------------------------------------------------------------
 	if(!$editar)
 	{
 		//data atual
@@ -94,9 +91,7 @@
 		Post gravado com sucesso.<br><br>
 		<a href="forum.php">Voltar</a>
 		</div>';
-		
-	
-	//-------------------------------------------------------------------------------
+
 		include'rodape.php';
 	
 ?>

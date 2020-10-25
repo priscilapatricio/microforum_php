@@ -4,7 +4,6 @@
 	session_start();
 	unset($_SESSION['user']);
 	
-	//------------------------------------------------------------
 	//cabecalho
 	include'cabecalho.php';
 	
@@ -18,16 +17,11 @@
 		RegistrarUtilizador();
 	}
 	
-	
-	
-	
-	//--------------------------------------------------------
 	//rodape
 	include'rodape.php';
-	
-	//------------------------------------------------------------
+
 	//FUNÇÕES
-	//------------------------------------------------------------
+
 	function ApresentarFormulario()
 	{
 		//Apresenta o formulário para edição de novo utilizador
@@ -36,14 +30,14 @@
 		
 		<h3>Signup</h3><hr><br>
 		
-		Username:<br><input type="text" size="20" name="text_utilizador"><br><br>
+		Usuário:<br><input type="text" size="20" name="text_utilizador"><br><br>
 		
-		Password:<br><input type="password" size="20" name="text_password_1"><br><br>
-		Re-escrever password:<br><input type="password" size="20" name="text_password_2"><br><br>
+		Senha:<br><input type="password" size="20" name="text_password_1"><br><br>
+		Re-escrever senha:<br><input type="password" size="20" name="text_password_2"><br><br>
 		
 		
 		<input type="hidden" name="MAX_FILE_SIZE" value="50000">
-		Avatar:<input type="file" name="imagem_avatar"><br>
+		Imagem:<input type="file" name="imagem_avatar"><br>
 		<small>(Imagem do tipo <strong>JPG</strong>, tamanho máximo:<strong>50kbs</strong>)</small><br><br>
 		
 		
@@ -52,10 +46,8 @@
 				
 		</form>
 		';
-		
 	}
 	
-	//------------------------------------------------------------
 	function RegistrarUtilizador()
 	{
 		//executar as operações necessárias para o registro de um novo utilizador
@@ -66,7 +58,6 @@
 		$avatar = $_FILES['imagem_avatar'];
 		$erro=false;
 		
-		//--------------------------------------------------------
 		//verificação de erros do utilizador
 		if($utilizador=="" || $password_1=="" || $password_2=="")
 		{
@@ -77,22 +68,22 @@
 		else if($password_1 != $password_2)
 		{
 			//ERRO - password não coincidem
-			echo '<div class="erro">As passwords não coincidem.</div>';
+			echo '<div class="erro">As senhas não coincidem.</div>';
 			$erro=true;
 		}
-		//--------------------------------------------------------
+
 		//erros do Avatar
 		else if($avatar['name'] != ""&& $avatar['type'] != "image/jpeg")
 		{
-			//ERRO - Ficheiro de imagem inválido
-			echo '<div class="erro">Ficheiro de imagem inválido.</div>';
+			//ERRO - Tipo de imagem inválida
+			echo '<div class="erro">Tipo de imagem inválida.</div>';
 			$erro=true;
 		}
 		
 		else if($avatar['name']!=""&&$avatar['size']>$_POST['MAX_FILE_SIZE'])
 		{
-			//ERRO - Ficheiro de imagem maior do que o permitido
-			echo '<div class="erro">Ficheiro de imagem maior do que o permitido.</div>';
+			//ERRO - Tamanho da imagem maior do que o permitido
+			echo '<div class="erro">Tamanho da imagem maior do que o permitido.</div>';
 			$erro=true;
 		}
 		
@@ -105,14 +96,11 @@
 			exit;
 		}
 		
-		//--------------------------------------------------------
 		//PROCESSAMENTO DO REGISTRO DO NOVO UTILIZADOR
-		//--------------------------------------------------------
 		include 'config.php';
 		
 		$ligacao=new PDO("mysql:dbname=$base_dados;host=$host",$user,$password);
 		
-		//--------------------------------------------------------
 		//verificar se existe um utilizador com o mesmo username
 		$motor=$ligacao->prepare("SELECT username FROM users WHERE username=?");
 		$motor->bindParam(1,$utilizador, PDO::PARAM_STR);
@@ -121,7 +109,7 @@
 		if($motor->rowCount()!=0)
 		{
 			//ERRO - utilizador já se encontra registrado.
-			echo '<div class="erro">Já existe um membro do fórum com o mesmo username.</div>';
+			echo '<div class="erro">Já existe um membro do fórum com o mesmo usuário.</div>';
 			$ligacao=null;
 			ApresentarFormulario();
 			//inlcuir o rodapé do fórum
@@ -156,8 +144,8 @@
 			
 			//apresentar uma mensagem de boas vindas ao novo utilizador
 			echo'
-			<div class="novo_registro_sucesso">Bem vindo(a) ao Micro fórum, <strong>'.$utilizador.'</strong><br><br>
-			A partir desse momento está em condições de fazer o seu login e participar nesta comunidade online.
+			<div class="novo_registro_sucesso">Bem vindo(a) ao Micro Fórum, <strong>'.$utilizador.'</strong><br><br>
+			A partir desse momento você está em condições de fazer seu login e participar desta comunidade online.
 			<br><br>
 			<a href="index.php">Quadro de login</a>
 			</div>

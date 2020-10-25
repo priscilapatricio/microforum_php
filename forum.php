@@ -5,30 +5,23 @@
 	if(!isset($_SESSION['user']))
 	{
 		include'cabecalho.php';
-		echo'<div class="erro">Não tem permissão para ver o conteúdo do fórum.<br><br>
-		<a href="index.php">Retroceder</a>
+		echo'<div class="erro">Você não tem permissão para ver o conteúdo do fórum.<br><br>
+		<a href="index.php">Voltar</a>
 		</div>';
 		include'rodape.php';
 		exit;
 	}
 	
-	
-	//-------------------------------------------------------------------------------
 	include'cabecalho.php';
 	
-	
-	//-------------------------------------------------------------------------------
 	//dados do utilizador que está logado
 	echo'<div class="dados_utilizador">
 		<img src="images/avatars/'.$_SESSION['avatar'].'"><span>'.$_SESSION['user'].'</span> | <a href="logout.php">Logout</a>
 		</div>';
-	
-	//-------------------------------------------------------------------------------
+
 	//novo post
 	echo'<div class="novo_post"><a href="editor_post.php">Novo post</a></div>';
 	
-	
-	//-------------------------------------------------------------------------------
 	//apresentação dos posts do nosso fórum
 	
 	include 'config.php';
@@ -85,8 +78,7 @@
 			echo '</div></div>';
 		}
 	}
-		
-	//-------------------------------------------------------------------------------
+
 	//buscar users
 	$ligacao=new PDO("mysql:dbname=$base_dados;host=$host",$user,$password);
 	$motor=$ligacao->prepare("SELECT id_user FROM users");
@@ -100,18 +92,12 @@
 	$numPosts=$motor->rowCount();
 	if($numPosts==null)$numPosts=0;
 	$ligacao=null;
-	
-	
+		
 	//apresentar os dados: número de users registrados e número de posts gravados na BD
 	echo '<div class="totais">
-		Número de utilizadores registrados: <strong>'.$numUsers.'</strong> | Número total de posts: <strong>'.$numPosts.'</strong>
+		Número de usuários registrados: <strong>'.$numUsers.'</strong> | Número total de posts: <strong>'.$numPosts.'</strong>
 		</div>';
-	
-	
-	
-	
-	//-------------------------------------------------------------------------------
-	include'rodape.php';
 
+	include'rodape.php';
 
 ?>
