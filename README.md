@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt=" title=" src=".images/logo.png" width="60px" />
+    <img alt=" title=" src=".github/logo.png" width="60px" />
 </h1>
 
 <p align="center">
@@ -15,7 +15,7 @@
 <br>
 
 <p align="center">
-  <img alt="MicroForum" src=".images/index.png" width="100%">
+  <img alt="MicroForum" src=".github/index.png" width="100%">
 </p>
 
 ## Exercício PHP - Construção de Micro Fórum
